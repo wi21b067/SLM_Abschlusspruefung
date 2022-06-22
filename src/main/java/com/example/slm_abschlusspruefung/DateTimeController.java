@@ -2,10 +2,13 @@ package com.example.slm_abschlusspruefung;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 public class DateTimeController {
@@ -21,6 +24,12 @@ public class DateTimeController {
         LocalTime n = LocalTime.now();
         return n;
         }
+@GetMapping("api/now/")
+    public String getDateRequest (@RequestParam String format) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+        LocalTime now = LocalTime.now();
+        return dtf.format(now);
+    }
 
 
 
