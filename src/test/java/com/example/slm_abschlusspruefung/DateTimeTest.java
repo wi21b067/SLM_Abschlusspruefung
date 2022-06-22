@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class DateTimeTest {
 
@@ -15,4 +16,12 @@ public class DateTimeTest {
         Assertions.assertEquals(expected, actual, " ");
 
     }
+    public void testTime(){
+        DateTimeController dt = new DateTimeController();
+        String actual = dt.now().toString();
+        String expected = LocalTime.now().toString();
+        Assertions.assertEquals(expected, actual, " ");
+
+    }
+
 }

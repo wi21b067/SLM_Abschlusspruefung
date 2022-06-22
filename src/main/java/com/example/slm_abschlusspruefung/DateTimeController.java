@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @RestController
 public class DateTimeController {
@@ -14,6 +15,14 @@ public class DateTimeController {
             LocalDate t = LocalDate.now();
             return t;
         }
+
+        @GetMapping("/api/now")
+        public LocalTime now (){
+        LocalTime n = LocalTime.now();
+        return n;
+        }
+
+
 
 
 
